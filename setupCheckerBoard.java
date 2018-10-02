@@ -11,9 +11,9 @@ public class setupCheckerBoard{
 		
 		Scanner inputDevice = new Scanner(System.in);
 		
-		System.out.println("Would you like to make a new chess board? \n");
+		/*System.out.println("Would you like to make a new chess board? \n");
 		choice = inputDevice.next().charAt(0);
-		inputDevice.nextLine();
+		inputDevice.nextLine();*/
 		
 		
 		boolean cont = true;
@@ -25,7 +25,7 @@ public class setupCheckerBoard{
 			System.out.println("What would you like to do? \n");
 			System.out.println("y) Make a new chess board? \n");
 			System.out.println("p) Print board \n");
-			//System.out.println("c) Mark list done \n");
+			System.out.println("q) Quit game \n");
 			//System.out.println("d) Print count of ToDo \n");
 			System.out.println("=================================== \n");
 			
@@ -38,6 +38,9 @@ public class setupCheckerBoard{
 			}
 			if(choice=='p'){
 				board.printBoard();
+			}
+			if(choice=='q'){
+				cont=false;
 			}
 		}
 		/*int countA=0;
