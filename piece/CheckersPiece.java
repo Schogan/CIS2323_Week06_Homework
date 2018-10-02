@@ -45,7 +45,7 @@ public class CheckersPiece{
 			setPosition(a,b);
 			tile = 'R';
 		}else{
-		
+			tile = 'x';
 		}
 	}
 	
@@ -56,7 +56,7 @@ public class CheckersPiece{
 			setPosition(a,b);
 			tile = 'B';
 		}else{
-		
+			tile = 'x';
 		}
 	}
 	
@@ -91,6 +91,34 @@ public class CheckersPiece{
 		}
 		
 		
+	}
+	
+	public void printRed(){
+		for(int i=0;i<8;i++){
+			System.out.print("|");
+			for(int j=0;j<8;j++){
+				System.out.print(redi][j].printInfo());
+			}
+			System.out.print("|\n");
+			System.out.println("--------------------------");
+		}
+		
+	}
+	public void printBlack(){
+		for(int i=0;i<8;i++){
+			System.out.print("|");
+			for(int j=0;j<8;j++){
+				System.out.print(black[i][j].printInfo());
+			}
+			System.out.print("|\n");
+			System.out.println("--------------------------");
+		}
+		
+	}
+	
+	public String printInfo(){
+		return " " + tile + " ";
+				
 	}
 	
 }
