@@ -1,5 +1,6 @@
 import board.*;
 import piece.*;
+import game.*;
 import java.util.Scanner;
 public class setupCheckerBoard{
 	public static void main(String[] args){

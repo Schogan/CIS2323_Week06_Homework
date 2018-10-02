@@ -19,22 +19,16 @@ public class Board{
 			}
 		}
 	}
+	
 	public void makeBoard(int a, int b){
-		/*if(a == 2 || a == 3 || a == 4 || a == 5){
-		
-		}else{*/
 		setPosition(a,b);
 		setTile(a,b);
-		//}
 	}
 	
 	public void setTile(int a, int b){
 		tile = 'X';
 	}
-
-		
 	
-		
 	public void setPosition(int x, int y){
 		posX = x+1;
 		posY = y+1;
@@ -64,8 +58,6 @@ public class Board{
 		if (posY == 8){
 			posYChar = 'H';
 		}
-		
-		
 	}
 	
 	public void printBoard(){
@@ -77,12 +69,10 @@ public class Board{
 			System.out.print("|\n");
 			System.out.println("--------------------------");
 		}
-		
 	}
 	
 	public String printInfo(){
 		return " " + tile + " ";
 				
 	}
-	
 }
