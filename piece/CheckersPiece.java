@@ -3,13 +3,14 @@ package piece;
 public class CheckersPiece{
 	private int posX;
 	private int posY;
+	private String color;
 	private int nPieceRed;
 	private int nPieceBlack;
 	private char posYChar;
 	private char tile;
 	
-	private redCheckers[][] red = new redCheckers[8][8];
-	private blackCheckers[][] black = new blackCheckers[8][8];
+	private CheckersPiece[][] red = new CheckersPiece[8][8];
+	private CheckersPiece[][] black = new CheckersPiece[8][8];
 	
 	public void CheckersPiece(){
 		redCheckers();
@@ -20,8 +21,8 @@ public class CheckersPiece{
 		
 		for(int i=0;i<8;i++){
 			for(int j=0;j<8;j++){
-				redCheckers[i][j] = new red();
-				redCheckers[i][j].makeRed(i, j);
+				red[i][j] = new CheckersPiece();
+				red[i][j].makeRed(i, j);
 								
 			}
 		}
@@ -31,8 +32,8 @@ public class CheckersPiece{
 		
 		for(int i=0;i<8;i++){
 			for(int j=0;j<8;j++){
-				blackCheckers[i][j] = new black();
-				blackCheckers[i][j].makeBlack(i, j);
+				black[i][j] = new CheckersPiece();
+				black[i][j].makeBlack(i, j);
 								
 			}
 		}
@@ -40,7 +41,7 @@ public class CheckersPiece{
 	
 	public void makeRed(int a, int b){
 		int nPieceRed = b+1;
-		if(a==0&&b%2!=0||a==1&&b%2==0||a==2&&b%2!=0){
+		if(a==5&&b%2==0||a==6&&b%2!=0||a==7&&b%2==0){
 			color = "red";
 			setPosition(a,b);
 			tile = 'R';
@@ -51,7 +52,7 @@ public class CheckersPiece{
 	
 	public void makeBlack(int a, int b){
 		int nPieceBlack = b+1;
-		if(a==5&&b%2==0||a==6&&b%2!=0||a==7&&b%2==0){
+		if(a==0&&b%2!=0||a==1&&b%2==0||a==2&&b%2!=0){
 			color = "black";
 			setPosition(a,b);
 			tile = 'B';
@@ -97,7 +98,7 @@ public class CheckersPiece{
 		for(int i=0;i<8;i++){
 			System.out.print("|");
 			for(int j=0;j<8;j++){
-				System.out.print(redi][j].printInfo());
+				System.out.print(red[i][j].printInfo());
 			}
 			System.out.print("|\n");
 			System.out.println("--------------------------");
