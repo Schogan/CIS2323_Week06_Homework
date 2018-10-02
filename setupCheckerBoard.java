@@ -11,6 +11,7 @@ public class setupCheckerBoard{
 		boolean cont = true;
 		Board board = new Board();
 		CheckersPiece piece = new CheckersPiece();
+		Game game = new Game();
 		
 		while(cont){
 			System.out.println("=================================== \n");
@@ -29,6 +30,7 @@ public class setupCheckerBoard{
 			if(choice=='y'){
 				board.Board();
 				piece.CheckersPiece();
+				game.Game();
 			}
 			if(choice=='p'){
 				System.out.println("=================================== \n");

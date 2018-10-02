@@ -122,4 +122,14 @@ public class CheckersPiece{
 				
 	}
 	
+	public void requestTile(int a, int b){
+		red[a][b].getTile();
+		black[a][b].getTile();
+		
+	}
+	
+	public char getTile(){
+		return tile;
+	}
+	
 }

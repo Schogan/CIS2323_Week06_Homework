@@ -3,12 +3,27 @@ import piece.*;
 import board.*;
 
 public class Game{
-	private Game[][] currentGame = new Game[8][8];
+	private char currentGame[][] = new char[8][8];
 	
 	private char tile;
 	
-	public void Game(){
+	private Board board;// = new Board();
+	private CheckersPiece piece;// = new CheckersPiece();
 		
+	public void Game(){
+		setupGame();
+		updateBoard();
+	}
+	
+	public void setupGame(){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				currentGame[i][j]=piece.requestTile();
+				if (currentGame[i][j]!='r'||currentGame[i][j]!='b'){
+					currentGame[i][j]=board.requestTile(i,j);}
+				
+			}
+		}
 	}
 	
 	public void updateBoard(){

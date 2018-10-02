@@ -75,4 +75,13 @@ public class Board{
 		return " " + tile + " ";
 				
 	}
+	
+	public void requestTile(int a, int b){
+		Tiles[a][b].getTile();
+	}
+	
+	public char getTile(){
+		return tile;
+	}
+	
 }
