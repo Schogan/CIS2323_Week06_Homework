@@ -8,6 +8,8 @@ public class CheckersPiece{
 	private int nPieceBlack;
 	private char posYChar;
 	private char tile;
+	private int cordX;
+	private	int cordY;
 	
 	private CheckersPiece[][] red = new CheckersPiece[8][8];
 	private CheckersPiece[][] black = new CheckersPiece[8][8];
@@ -90,8 +92,6 @@ public class CheckersPiece{
 		if (posY == 8){
 			posYChar = 'H';
 		}
-		
-		
 	}
 	
 	public void printRed(){
@@ -122,12 +122,13 @@ public class CheckersPiece{
 				
 	}
 	
-	public void requestTile(int a, int b){
-		red[a][b].getTile();
-		black[a][b].getTile();
-		
+	public char requestTile(){
+		return red[cordX][cordY].getTile();
 	}
-	
+	public void setCord(int a, int b){
+		int cordX = a;
+		int cordY = b;
+	}
 	public char getTile(){
 		return tile;
 	}

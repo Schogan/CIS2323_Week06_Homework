@@ -7,8 +7,8 @@ public class Game{
 	
 	private char tile;
 	
-	private Board board;// = new Board();
-	private CheckersPiece piece;// = new CheckersPiece();
+	private Board board = new Board();
+	private CheckersPiece piece = new CheckersPiece();
 		
 	public void Game(){
 		setupGame();
@@ -18,9 +18,15 @@ public class Game{
 	public void setupGame(){
 		for(int i=0;i<8;i++){
 			for(int j=0;j<8;j++){
-				currentGame[i][j]=piece.requestTile();
-				if (currentGame[i][j]!='r'||currentGame[i][j]!='b'){
-					currentGame[i][j]=board.requestTile(i,j);}
+				piece.setCord(i,j);
+				char newTile = piece.requestTile();
+					if(newTile=='R'||newTile=='B'){
+						currentGame[i][j]=newTile;
+					}else{
+						currentGame[i][j]='X';
+					}
+				/* if (currentGame[i][j]!='r'||currentGame[i][j]!='b'){
+					currentGame[i][j]=board.requestTile(i,j);} */
 				
 			}
 		}
@@ -30,7 +36,7 @@ public class Game{
 		for(int i=0;i<8;i++){
 			System.out.print("|");
 			for(int j=0;j<8;j++){
-				System.out.print(currentGame[i][j].printInfo());
+				System.out.print(currentGame[i][j]);
 			}
 			System.out.print("|\n");
 			System.out.println("--------------------------");
