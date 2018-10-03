@@ -1,4 +1,5 @@
 package board;
+import piece.*;
 
 public class Board{
 	// Object attributes
@@ -7,6 +8,8 @@ public class Board{
 	private int posY;
 	private char posYChar;
 	private char tile;
+	
+	private CheckersPiece piece;// = new CheckersPiece();
 	
 	// Object Methods
 	public void Board(){
@@ -19,6 +22,20 @@ public class Board{
 			}
 		}
 	}
+	
+	public void updateBoardEmpty(CheckersPiece[][] input){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				
+				if(input[i][j].tile!='R'||input[i][j].tile!='B'){
+					
+					piece.currentGame[i][j]= new CheckersPiece();
+					piece.currentGame[i][j]= Tiles[i][j];
+				}
+			}
+		}
+	}
+
 	
 	public void makeBoard(int a, int b){
 		setPosition(a,b);
@@ -76,12 +93,12 @@ public class Board{
 				
 	}
 	
-	public void requestTile(int a, int b){
+	/* public void requestTile(int a, int b){
 		Tiles[a][b].getTile();
 	}
 	
 	public char getTile(){
-		return tile;
-	}
+		return Tiles[][];
+	} */
 	
 }

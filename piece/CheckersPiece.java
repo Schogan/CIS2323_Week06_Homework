@@ -1,4 +1,5 @@
 package piece;
+import board.*;
 
 public class CheckersPiece{
 	private int posX;
@@ -7,63 +8,58 @@ public class CheckersPiece{
 	private int nPieceRed;
 	private int nPieceBlack;
 	private char posYChar;
-	private char tile;
+	public char tile;
 	private int cordX;
 	private	int cordY;
 	
-	private CheckersPiece[][] red = new CheckersPiece[8][8];
-	private CheckersPiece[][] black = new CheckersPiece[8][8];
+	public CheckersPiece[][] currentGame = new CheckersPiece[8][8];
+	
+	//private CheckersPiece[][] black = new CheckersPiece[8][8];
 	private CheckersPiece[][] game = new CheckersPiece[8][8];
 	
+	private Board board = new Board();
+	
 	public void CheckersPiece(){
-		redCheckers();
-		blackCheckers();
+		setupGame();
+		//blackCheckers();
 	}
 	
-	public void redCheckers(){
+	public void makeCheckers(){
 		
 		for(int i=0;i<8;i++){
 			for(int j=0;j<8;j++){
-				red[i][j] = new CheckersPiece();
-				red[i][j].makeRed(i, j);
+				game[i][j] = new CheckersPiece();
+				game[i][j].gamePieces(i, j);
+				
+				currentGame[i][j] = new CheckersPiece();
+				currentGame[i][j].gamePieces(i, j);
 								
 			}
 		}
 	}
 	
-	public void blackCheckers(){
-		
-		for(int i=0;i<8;i++){
-			for(int j=0;j<8;j++){
-				black[i][j] = new CheckersPiece();
-				black[i][j].makeBlack(i, j);
-								
-			}
-		}
+	public void setupGame(){
+		makeCheckers();
+		board.updateBoardEmpty(currentGame);
 	}
-	
-	public void makeRed(int a, int b){
+		
+	public void gamePieces(int a, int b){
 		int nPieceRed = b+1;
+		int nPieceBlack = b+1;
 		if(a==5&&b%2==0||a==6&&b%2!=0||a==7&&b%2==0){
 			color = "red";
 			setPosition(a,b);
 			tile = 'R';
-		}else{
-			tile = 'x';
 		}
-	}
-	
-	public void makeBlack(int a, int b){
-		int nPieceBlack = b+1;
 		if(a==0&&b%2!=0||a==1&&b%2==0||a==2&&b%2!=0){
 			color = "black";
 			setPosition(a,b);
 			tile = 'B';
-		}else{
-			tile = 'x';
 		}
+		
 	}
 	
+		
 	public void setPosition(int x, int y){
 		posX = x+1;
 		posY = y+1;
@@ -95,43 +91,24 @@ public class CheckersPiece{
 		}
 	}
 	
-	public void printRed(){
+	public void printGame(){
 		for(int i=0;i<8;i++){
 			System.out.print("|");
 			for(int j=0;j<8;j++){
-				System.out.print(red[i][j].printInfo());
+				System.out.print(currentGame[i][j].printInfo());
 			}
 			System.out.print("|\n");
 			System.out.println("--------------------------");
 		}
 		
 	}
-	public void printBlack(){
-		for(int i=0;i<8;i++){
-			System.out.print("|");
-			for(int j=0;j<8;j++){
-				System.out.print(black[i][j].printInfo());
-			}
-			System.out.print("|\n");
-			System.out.println("--------------------------");
-		}
-		
-	}
+	
 	
 	public String printInfo(){
 		return " " + tile + " ";
 				
 	}
 	
-	public char requestTile(){
-		return red[cordX][cordY];
-	}
-	public void setCord(int a, int b){
-		int cordX = a;
-		int cordY = b;
-	}
-	/* public char getTile(){
-		return tile;
-	} */
+	
 	
 }

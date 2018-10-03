@@ -3,7 +3,7 @@ import piece.*;
 import board.*;
 
 public class Game{
-	private char currentGame[][] = new char[8][8];
+	/* private char currentGame[][] = new char[8][8];
 	
 	private char tile;
 	private char newTile;
@@ -27,7 +27,7 @@ public class Game{
 						currentGame[i][j]='X';
 					}
 				/* if (currentGame[i][j]!='r'||currentGame[i][j]!='b'){
-					currentGame[i][j]=board.requestTile(i,j);} */
+					currentGame[i][j]=board.requestTile(i,j);} 
 				
 			}
 		}
@@ -51,6 +51,6 @@ public class Game{
 	public String printInfo(){
 		return " " + tile + " ";
 				
-	}
+	} */
 	
 }
