@@ -13,6 +13,7 @@ public class CheckersPiece{
 	
 	private CheckersPiece[][] red = new CheckersPiece[8][8];
 	private CheckersPiece[][] black = new CheckersPiece[8][8];
+	private CheckersPiece[][] game = new CheckersPiece[8][8];
 	
 	public void CheckersPiece(){
 		redCheckers();
@@ -123,14 +124,14 @@ public class CheckersPiece{
 	}
 	
 	public char requestTile(){
-		return red[cordX][cordY].getTile();
+		return red[cordX][cordY];
 	}
 	public void setCord(int a, int b){
 		int cordX = a;
 		int cordY = b;
 	}
-	public char getTile(){
+	/* public char getTile(){
 		return tile;
-	}
+	} */
 	
 }
