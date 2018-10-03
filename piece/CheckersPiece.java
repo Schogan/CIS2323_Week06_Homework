@@ -12,6 +12,8 @@ public class CheckersPiece{
 	private int cordX;
 	private	int cordY;
 	
+	enum Color{ Red, Black;}
+	
 	public CheckersPiece[][] currentGame = new CheckersPiece[8][8];
 	
 	//private CheckersPiece[][] black = new CheckersPiece[8][8];
@@ -47,12 +49,12 @@ public class CheckersPiece{
 		int nPieceRed = b+1;
 		int nPieceBlack = b+1;
 		if(a==5&&b%2==0||a==6&&b%2!=0||a==7&&b%2==0){
-			color = "red";
+			Color R = Color.Red;
 			setPosition(a,b);
 			tile = 'R';
 		}
 		if(a==0&&b%2!=0||a==1&&b%2==0||a==2&&b%2!=0){
-			color = "black";
+			Color B = Color.Black;
 			setPosition(a,b);
 			tile = 'B';
 		}

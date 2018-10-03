@@ -10,7 +10,7 @@ public class Board{
 	private char tile;
 	
 	private CheckersPiece piece;// = new CheckersPiece();
-	
+	enum color{ Red, Black;}
 	// Object Methods
 	public void Board(){
 		
