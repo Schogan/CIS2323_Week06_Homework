@@ -1,5 +1,6 @@
 package piece;
 import board.*;
+import java.*;
 
 public class CheckersPiece{
 	private int posX;
@@ -12,7 +13,7 @@ public class CheckersPiece{
 	private int cordX;
 	private	int cordY;
 	
-	enum Color{ Red, Black;}
+	enum Color{ Red, Black, Clear;}
 	
 	public CheckersPiece[][] currentGame = new CheckersPiece[8][8];
 	
@@ -42,7 +43,7 @@ public class CheckersPiece{
 	
 	public void setupGame(){
 		makeCheckers();
-		board.updateBoardEmpty(currentGame);
+		//board.updateBoardEmpty(currentGame);
 	}
 		
 	public void gamePieces(int a, int b){
@@ -98,6 +99,9 @@ public class CheckersPiece{
 			System.out.print("|");
 			for(int j=0;j<8;j++){
 				System.out.print(currentGame[i][j].printInfo());
+				if (currentGame[i][j]==null){
+					board.printTile(i,j);
+				}
 			}
 			System.out.print("|\n");
 			System.out.println("--------------------------");

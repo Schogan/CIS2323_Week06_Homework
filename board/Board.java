@@ -1,5 +1,6 @@
 package board;
 import piece.*;
+import java.*;
 
 public class Board{
 	// Object attributes
@@ -10,7 +11,7 @@ public class Board{
 	private char tile;
 	
 	private CheckersPiece piece;// = new CheckersPiece();
-	enum color{ Red, Black;}
+	enum Color{ Red, Black, Clear;}
 	// Object Methods
 	public void Board(){
 		
@@ -23,7 +24,7 @@ public class Board{
 		}
 	}
 	
-	public void updateBoardEmpty(CheckersPiece[][] input){
+	/* public void updateBoardEmpty(CheckersPiece[][] input){
 		for(int i=0;i<8;i++){
 			for(int j=0;j<8;j++){
 				
@@ -34,12 +35,17 @@ public class Board{
 				}
 			}
 		}
-	}
+	} */
 
 	
 	public void makeBoard(int a, int b){
 		setPosition(a,b);
 		setTile(a,b);
+		setColor(a,b);
+	}
+	
+	public void setColor(int a,int b){
+		Color C = Color.Clear;
 	}
 	
 	public void setTile(int a, int b){
@@ -88,6 +94,10 @@ public class Board{
 		}
 	}
 	
+	public void printTile(int a,int b){
+		System.out.print(Tiles[a][b].tile);
+	}
+	
 	public String printInfo(){
 		return " " + tile + " ";
 				
@@ -99,6 +109,6 @@ public class Board{
 	
 	public char getTile(){
 		return Tiles[][];
-	} */
+	}*/ 
 	
 }
